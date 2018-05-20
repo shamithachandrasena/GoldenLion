@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
+import { HttpModule } from '@angular/http';
+import { EmbedVideo } from 'ngx-embed-video';
 
 
 @NgModule({
@@ -10,9 +12,18 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, RouterModule.forRoot([
+      { path: '', component: AppComponent }
+          ]),
+    MaterialModule,
+    HttpModule,
+    EmbedVideo.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+  
+  }
+ }
