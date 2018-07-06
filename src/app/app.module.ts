@@ -5,11 +5,16 @@ import { MaterialModule } from './material/material.module';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { EmbedVideo } from 'ngx-embed-video';
+import { DragScrollModule } from 'ngx-drag-scroll';
+import { ContactComponentComponent } from './contact-component/contact-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactComponentComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot([
@@ -17,7 +22,9 @@ import { EmbedVideo } from 'ngx-embed-video';
           ]),
     MaterialModule,
     HttpModule,
-    EmbedVideo.forRoot()
+    EmbedVideo.forRoot(),
+    DragScrollModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

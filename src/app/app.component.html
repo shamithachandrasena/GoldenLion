@@ -1,7 +1,10 @@
-<div class="container" style="background-color: rgb(245, 209, 6);">
-<button mat-button>Home</button>
 
-<div class="row"><div class="col-md-4"></div><div class="col-md-4" align="center"><h1>Golden Lion</h1></div><div class="col-md-4"></div></div>
+
+<div class="row" id="topbar"><div class="col-md-4"><button class="mat-raised-button">Home</button></div><div class="col-md-4" align="center"><h6>Golden Lion</h6></div><div class="col-md-4"></div></div>
+<br><br><br>
+
+<div class="container"  style="background-color: rgb(247, 245, 239);">
+
 
 <div class="row">
 
@@ -11,72 +14,115 @@
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Personal data
+              CEO/Co-Founder
             </mat-panel-title>
             <mat-panel-description>
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
-          <mat-form-field>
-            <input matInput placeholder="First name">
-          </mat-form-field>
-          <mat-form-field>
-            <input matInput placeholder="Age">
-          </mat-form-field>
+          <p>Thilak Karunarathne</p>
+          
+         
         </mat-expansion-panel>
 
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
           <mat-expansion-panel-header>
             <mat-panel-title>
-              Self aware panel
+              Team Members
             </mat-panel-title>
             <mat-panel-description>
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
+          <p>First Person</p>
         </mat-expansion-panel>
 
       </mat-accordion></div>    
       <div  align ="center" class="col-md-9">
           
-                <div align="center" class="video-player embed-responsive embed-responsive-16by9">
-                    <!-- <div class="" id="video" [innerHtml]="iframe_html"></div> -->
-                    <iframe src="https://www.youtube.com/embed/iHhcHTlGtRs" frameborder="0" allowfullscreen></iframe>
+                <div align="center" [innerHtml]="iframe_html" class="video-player embed-responsive embed-responsive-16by9">
                 </div>
             
-    </div>
+      </div>
 
 </div>
 
-<div class="row col-md-12 h1">
-    <label>Recent Work</label>
-</div>
+<br>
+<br>
+
 <div class="row">
-    <div class="col-md-3 "><div  align ="center" class="embed-responsive embed-responsive-16by9"><div class="embed-responsive-item" [innerHtml]="iframe_html"></div></div></div>
-    <div class="col-md-3 "><div  align ="center" class="embed-responsive embed-responsive-16by9"><div class="embed-responsive-item" [innerHtml]="iframe_html"></div></div></div>
-    <div class="col-md-3 "><div  align ="center" class="embed-responsive embed-responsive-16by9"><div class="embed-responsive-item" [innerHtml]="iframe_html"></div></div></div>
-    <div class="col-md-3 "><div  align ="center" class="embed-responsive embed-responsive-16by9"><div class="embed-responsive-item" [innerHtml]="iframe_html"></div></div></div>
+  <div align="center" class="col-md-3"></div><div class="col-md-3 button button-responsive">
+    <!--Youtube-->
+    <button type="button" class="btn btn-yt waves-light mat-raised-button"><img class="img-responsive" src="./../assets/pictures/youtube.png" /></button></div>
+    
+  <div align="center" class="col-md-2"></div><div class="col-md-3">
+    <!--Facebook-->
+    <button type="button" class="btn btn-fb waves-light"><img class="img-responsive" src="./../assets/pictures/facebook.png" /></button></div>
 </div>
 
-<!-- <div class="row col-md-12 h1">
-        <label>Other Art Work</label>
+
+
+<div class="row col-md-12">Recent Work</div>
+<div class="demo-border">
+    <div class="demo-one"
+      dragScroll
+      drag-scroll-y-disabled="true"
+      scrollbar-hidden="true"
+      (reachesLeftBound)="leftBoundStat($event)"
+      (reachesRightBound)="rightBoundStat($event)"
+      #nav
+      >
+      <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+      <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+      <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+      <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+      <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+      
+   </div>
 </div>
-    <div class="row">
-        <div class="col-md-3 video-player"><div  align ="center" class="play-icon tf-ion-ios-play"><div class="embed-responsive-item" [innerHtml]="iframe_html"></div></div></div>
-        <div class="col-md-3 video-player"><div  align ="center" class="play-icon tf-ion-ios-play"><div class="embed-responsive-item" [innerHtml]="iframe_html"></div></div></div>
-        <div class="col-md-3 video-player"><div  align ="center" class="play-icon tf-ion-ios-play"><div class="embed-responsive-item" [innerHtml]="iframe_html"></div></div></div>
-        <div class="col-md-3 video-player"><div  align ="center" class="play-icon tf-ion-ios-play"><div class="embed-responsive-item" [innerHtml]="iframe_html"></div></div></div>
-    </div> -->
+<div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+  <button mat-raised-button color="primary" [disabled]="leftNavDisabled" (click)="moveLeft()">left</button>
+  <button mat-raised-button color="primary" [disabled]="rightNavDisabled" (click)="moveRight()">right</button>
+</div>
 
-   <!-- {{videoLink}} -->
+  
+
+<div class="row col-md-12 title">Other Art Work</div>
+    
+        <div class="demo-border">
+            <div class="demo-one"
+              dragScroll
+              drag-scroll-y-disabled="true"
+              scrollbar-hidden="true"
+              (reachesLeftBound)="leftBoundStat($event)"
+              (reachesRightBound)="rightBoundStat($event)"
+              #nav
+              >
+              <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+              <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+              <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+              <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+              <img class=" videoLink " align="center" [src]="this.youtubeImage['__zone_symbol__value']['link']" (click)="clickItem(image)"/>
+              
+           </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+          <button mat-raised-button color="primary" [disabled]="leftNavDisabled" (click)="moveLeft()">left</button>
+          <button mat-raised-button color="primary" [disabled]="rightNavDisabled" (click)="moveRight()">right</button>
+      </div>
+
+    
 
 </div>
 
-<!-- <div class="col-md-6">
-        <div class="video-player" style="padding: 1px;">
-            <div class="">
-                    <div class="embed-responsive-item" [innerHtml]="iframe_html"></div>
-            </div>
-        </div>
- </div> -->
+<br>
+<div class="=row">
+    
+          <div *ngIf="true" align="center">
+              <app-contact-component></app-contact-component>
+          </div>
+    
+
+</div>
+
+<!-- *ngFor="let image of imagelist" -->
+
